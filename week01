@@ -1,1 +1,106 @@
 
+public class Main {
+    public static void main(String[] args) {
+
+        /*  练习1-1 mycode
+        Circle circle=new Circle();
+        circle.makeVisible();
+        Square square=new Square();
+        square.makeVisible();
+        */
+
+        /*练习 1-2 mycode 多调用几次movedown 图片的图像向下移动
+        Circle circle=new Circle();
+        circle.makeVisible();
+        circle.moveDown();
+        circle.moveDown();
+        */
+
+        /*练习1-3 mycode
+        Circle circle=new Circle();
+        circle.makeVisible();
+        //circle.moveVertical(70);  //y轴坐标移动
+        //circle.changeSize(50); 改变大小
+        //circle.slowMoveVertical(100); 缓慢移动y坐标
+        circle.moveHorizontal(-70); //x坐标向左移动70个像素点
+        */
+
+        /*练习1-4 mycode
+        Circle circle=new Circle();
+        circle.makeVisible();
+        circle.changeColor("red");
+           */
+
+        /*练习 1-5 如果输入一个未能识别的颜色会出现黑色
+        Circle circle=new Circle();
+        circle.makeVisible();
+        circle.changeColor("rad");
+        */
+
+        /*练习1-6  会报错
+        *
+        *  Circle circle=new Circle();
+        circle.makeVisible();
+        circle.changeColor(green);
+        *
+        * */
+        /* 练习 1-7
+        Circle circle=new Circle();
+        circle.makeVisible();
+        circle.moveHorizontal(150);
+        Triangle triangle=new Triangle();
+        triangle.makeVisible();
+        triangle.moveVertical(200);
+        Square square=new Square();
+        square.makeVisible();
+        square.moveDown();
+        */
+
+
+        /* 练习1-8
+         Square wall = new Square();
+        wall.moveVertical(80);
+        wall.changeSize(100);
+        wall.changeColor("black");
+        wall.makeVisible();
+
+        Square window = new Square();
+        window.changeColor("blue");
+        window.moveHorizontal(20);
+        window.moveVertical(100);
+        window.makeVisible();
+
+        Triangle roof = new Triangle();
+        roof.changeSize(50, 140);
+        roof.moveHorizontal(60);
+        roof.moveVertical(70);
+        roof.changeColor("yellow");
+        roof.makeVisible();
+
+        Circle  sun = new Circle();
+        sun.changeColor("red");
+        sun.moveHorizontal(180);
+        sun.moveVertical(-10);
+        sun.changeSize(60);
+        sun.makeVisible();
+
+        * */
+
+        /*练习1-10
+        Picture picture=new Picture();
+        picture.draw();
+        */
+
+        Picture picture=new Picture();
+        picture.draw();
+        picture.sunset();//练习16 相关代码sunset（）
+        /*  public void sunset()
+    {
+        sun.slowMoveVertical(150);  写在picture类内
+    }*/
+
+
+//其余类源码均为老师GitHub中源码
+
+    }
+}
