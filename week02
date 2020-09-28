@@ -1,0 +1,109 @@
+
+import java.util.Scanner;
+
+public class TicketMachine {
+    private int balance;
+    private int price;
+    private int total;
+
+    TicketMachine(int ticktCost) {
+        price = ticktCost;
+        balance = 0;
+        total = 0;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void printTicket() {
+        System.out.println("#################");
+        System.out.println("#Ticket:");
+        System.out.println("#" + price + "cents");
+        System.out.println("#################");
+        total += balance;//打印完车票后计入卖了多少钱
+        balance = 0;
+    }
+
+    public void inserMoney(int amount) {
+        if(amount<0)
+        {
+            System.out.println("please insert corret money");
+            return;
+        }
+        balance += amount;
+        if (balance > price) {   //给多了钱，找零
+            System.out.println("请收好您的零钱");
+            refund();
+            printTicket();
+        } else if (balance < price) {
+            System.out.println("金额不足，请充值：");
+            System.out.println("票价： " + price + " cents");
+            System.out.println("当前余额 " + balance + " cents");
+
+        } else {
+            printTicket();
+        }
+
+    }
+
+    public void refund() {
+        System.out.println("change：" + (balance - price) + "cents");
+        total -= balance - price;
+        balance = 0;//归零
+    }
+
+    public void setPrice(int amount) {
+        price = amount;
+    }
+    public void showPrice()
+    {
+        System.out.println("The price of a ticket is "+price+" cents");
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        TicketMachine ticketMachine=new TicketMachine(50);
+
+        while (true)
+        {
+            System.out.println("#######################");
+            System.out.println("######1.查询票价#########");
+            System.out.println("######2.购买车票#########");
+            System.out.println("######3.重新置票价#######");
+            System.out.println("######4.退出############");
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("请输入你的操作");
+            int flag=0;
+            switch(scanner.nextInt())
+            {
+                case 1:ticketMachine.showPrice();break;
+                case 2: {
+                    Scanner tic=new Scanner(System.in);
+                    ticketMachine.inserMoney(tic.nextInt());
+
+                }break;
+                case 3:{
+                    Scanner tic=new Scanner(System.in);
+                    ticketMachine.setPrice(tic.nextInt());
+
+                }break;
+                case 4:flag++;break;
+                default:
+                    System.out.println("请输入正确的操作");
+            }
+            if(flag!=0) break;
+        }
+    }
+
+}
+
